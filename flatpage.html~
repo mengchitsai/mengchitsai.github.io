@@ -6,12 +6,18 @@
     <meta name="description" content="This is Lebron James">
     <link rel="shortcut icon" href="LeBron_head.jpg">
 
+
+<meta property="og:title" content="Lebron in Title" />
+<meta property="og:url" content="http://www.lebron.com" />
+<meta property="og:image" content="LeBron_head.jpg" />
+<meta property="og:description" content="Cavaliers wins 2016 Champion!" />
+<meta property="og:site_name" content="LeBroning" />
+
     <script type="text/javascript">
 
-    var rb_recent_json = {"data":[{"entry_id":"123"}]};
-    var BASE_URL = "http://mengchitsai.github.io/";
+    var rb_recent_json = {"data":{"entity_id":"7890"}};
 
-    history.pushState({}, "Reelbuilder - Reel Id:" + String(rb_recent_json.data.entry_id), BASE_URL + "reelbuilder?reed_id=" + String(rb_recent_json.data.entity_id));
+    history.pushState({}, "Reelbuilder - Reel Id:" + String(rb_recent_json.data.entity_id), "reelbuilder?reed_id=" + String(rb_recent_json.data.entity_id));
 
     </script>
 
