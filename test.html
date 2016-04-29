@@ -6,18 +6,35 @@
     <meta name="description" content="This is Lebron James">
     <link rel="shortcut icon" href="LeBron_head.jpg">
 
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
     <script type="text/javascript">
 
     var rb_recent_json = {"data":{"entity_id":"7890"}};
 
-    history.pushState({}, "Reelbuilder - Reel Id:" + String(rb_recent_json.data.entity_id), "reelbuilder?reed_id=" + String(rb_recent_json.data.entity_id));
+    //history.pushState({}, "Reelbuilder - Reel Id:" + String(rb_recent_json.data.entity_id), "reelbuilder?reed_id=" + String(rb_recent_json.data.entity_id));
 
     </script>
 
 </head>
 <body>
 
-123
+<button id="change_data">Change description</button>
+
+<script type='text/javascript'>
+$('#change_data').on('click', function() {
+
+    var meta = document.getElementsByTagName('meta');
+    for(var i=0;i<meta.length;i++){
+	if (meta[i].getAttribute('name') == "description"){
+		meta[i].setAttribute('content',"Very Good");
+		 alert(meta[i].getAttribute('name')+'\n'+meta[i].getAttribute('content'));
+	}
+    }
+
+
+
+});
+</script>
 
 </body>
 </html>

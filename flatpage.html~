@@ -5,36 +5,68 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="LeBron_head.jpg">
 
-<meta property="og:title" content="This is LeBron James" />
-<meta property="og:image" content="http://mengchitsai.github.io/LeBron_head.jpg" />
-<meta property="og:description" content="FMVP in 2016 NBA Final when the Cavs wins the 2016 NBA Championship" />
-<meta property="og:site_name" content="LeBroning" />
-
     <script type="text/javascript">
 
     var rb_recent_json = {"data":{"entity_id":"7890"}};
 
-    history.pushState({}, "Reelbuilder - Reel Id:" + String(rb_recent_json.data.entity_id), "reelbuilder?reed_id=" + String(rb_recent_json.data.entity_id));
+    // history.pushState({}, "Reelbuilder - Reel Id:" + String(rb_recent_json.data.entity_id), "reelbuilder?reed_id=" + String(rb_recent_json.data.entity_id));
 
     </script>
 
     <script type="text/javascript">var switchTo5x=true;</script>
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-    <script type="text/javascript">stLight.options({publisher: "0008888f-7857-4667-8a15-abaf66b68ea2", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+    <script type="text/javascript">stLight.options({publisher: "0008888f-7857-4667-8a15-abaf66b68ea2", doNotHash: true, doNotCopy: false, hashAddressBar: false});</script>
 
+<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
 
 </head>
 <body>
 
 <img src="lebron.jpg" height="200px"/>
 
+<span id="button_1">
 
-<span class='st_sharethis_large' displayText='ShareThis'></span>
-<span class='st_facebook_large' displayText='Facebook'></span>
-<span class='st_twitter_large' displayText='Tweet'></span>
-<span class='st_linkedin_large' displayText='LinkedIn'></span>
-<span class='st_pinterest_large' displayText='Pinterest'></span>
-<span class='st_email_large' displayText='Email'></span>
+	<span class='st_sharethis_large' displayText='ShareThis'></span>
+	<span class='st_facebook_large' displayText='Facebook'></span>
+	<span class='st_twitter_large' displayText='Tweet'></span>
+	<span class='st_linkedin_large' displayText='LinkedIn'></span>
+	<span class='st_pinterest_large' displayText='Pinterest'></span>
+	<span class='st_email_large' displayText='Email'></span>
+
+</span>
+
+
+
+<script>
+         stWidget.addEntry({
+                 "service":"sharethis",
+                 "element":document.getElementById('button_1'),
+                 "url":"http://www.leBron.com",
+                 "title":"This is the original title",
+                 "type":"large",
+                 "text":"NBA 2016 play off is ongoing",
+                 "image":"http://mengchitsai.github.io/LeBron_head.jpg",
+                 "summary":"this is description1"
+         });
+</script>
+
+
+<br/><button id="change_data">Change Content</button>
+<script type='text/javascript'>
+$('#change_data').on('click', function() {
+
+         stWidget.addEntry({
+                 "service":"sharethis",
+                 "element":document.getElementById('button_1'),
+                 "url":"http://www.nba.com",
+                 "title":"This is the new title",
+                 "type":"large",
+                 "text":"Cavs has won the NBA 2016 Championship",
+                 "image":"http://mengchitsai.github.io/lebron.jpg",
+                 "summary":"this is description2"
+         });
+});
+</script>
 
 
 </body>

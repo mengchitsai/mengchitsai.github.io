@@ -11,6 +11,16 @@
 
     // history.pushState({}, "Reelbuilder - Reel Id:" + String(rb_recent_json.data.entity_id), "reelbuilder?reed_id=" + String(rb_recent_json.data.entity_id));
 
+
+    var url = "http://www.leBron.com";
+    var image = "http://mengchitsai.github.io/LeBron_head.jpg";
+
+    function change_url(){
+	url = "http://www.nba.com";
+	image = "http://mengchitsai.github.io/leBron.jpg";
+	alert(url);
+    }
+
     </script>
 
     <script type="text/javascript">var switchTo5x=true;</script>
@@ -41,33 +51,35 @@
          stWidget.addEntry({
                  "service":"sharethis",
                  "element":document.getElementById('button_1'),
-                 "url":"http://www.leBron.com",
-                 "title":"This is the original title",
+                 "url":url,
+                 "title":"sharethis",
                  "type":"large",
-                 "text":"NBA 2016 play off is ongoing",
-                 "image":"http://mengchitsai.github.io/LeBron_head.jpg",
+                 "text":"ShareThis" ,
+                 "image":image,
                  "summary":"this is description1"
          });
 </script>
 
 
-<br/><button id="change_data">Change Content</button>
+<br/><button id="change_data">Change description</button>
+
 <script type='text/javascript'>
 $('#change_data').on('click', function() {
 
-         stWidget.addEntry({
-                 "service":"sharethis",
-                 "element":document.getElementById('button_1'),
-                 "url":"http://www.nba.com",
-                 "title":"This is the new title",
-                 "type":"large",
-                 "text":"Cavs has won the NBA 2016 Championship!",
-                 "image":"http://mengchitsai.github.io/lebron.jpg",
-                 "summary":"this is description2"
-         });
+change_url()
+
 });
 </script>
 
+<br/><button id="show_url">Show URL</button>
+
+<script type='text/javascript'>
+$('#show_url').on('click', function() {
+
+alert(url);
+
+});
+</script>
 
 </body>
 </html>
