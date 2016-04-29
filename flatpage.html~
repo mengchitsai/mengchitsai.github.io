@@ -8,9 +8,10 @@
 
     <script type="text/javascript">
 
-    var rb_recent_json = {"data":{"entity_id":"7890"}};
+    var rb_recent_json = {"data":[{"entry_id":"123"}]};
+    var BASE_URL = "http://mengchitsai.github.io/";
 
-    history.pushState({}, "Reelbuilder - Reel Id:" + String(rb_recent_json.data.entity_id), "reelbuilder?reed_id=" + String(rb_recent_json.data.entity_id));
+    history.pushState({}, "Reelbuilder - Reel Id:" + String(rb_recent_json.data.entry_id), BASE_URL + "reelbuilder?reed_id=" + String(rb_recent_json.data.entity_id));
 
     </script>
 
