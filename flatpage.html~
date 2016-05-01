@@ -26,7 +26,6 @@
 
 <span id="button_1">
 
-	<span class='st_sharethis_large' displayText='ShareThis'></span>
 	<span class='st_facebook_large' displayText='Facebook'></span>
 	<span class='st_twitter_large' displayText='Tweet'></span>
 	<span class='st_linkedin_large' displayText='LinkedIn'></span>
@@ -46,7 +45,7 @@
                  "type":"large",
                  "text":"NBA 2016 play off is ongoing",
                  "image":"http://mengchitsai.github.io/LeBron_head.jpg",
-                 "summary":"this is description1"
+                 "summary":"2016 Playoffs"
          });
 </script>
 
@@ -63,7 +62,7 @@ $('#change_data').on('click', function() {
                  "type":"large",
                  "text":"Cavs has won the NBA 2016 Championship!",
                  "image":"http://mengchitsai.github.io/lebron.jpg",
-                 "summary":"this is description2"
+                 "summary":"2016 Champion"
          });
 });
 </script>
