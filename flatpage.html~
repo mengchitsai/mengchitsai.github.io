@@ -61,7 +61,7 @@ $('#change_data').on('click', function() {
                  "url":"http://www.nba.com",
                  "title":"This is the new title",
                  "type":"large",
-                 "text":"Cavs has won the NBA 2016 Championship",
+                 "text":"Cavs has won the NBA 2016 Championship!",
                  "image":"http://mengchitsai.github.io/lebron.jpg",
                  "summary":"this is description2"
          });
