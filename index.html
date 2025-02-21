@@ -65,12 +65,6 @@
     </style>
 </head>
 <body>
-
-    <div>
-        <img id="test" src="poke.jpg">
-    </div>
-
-
     <div id="interactive"></div>
     <div id="overlay">
         <div>
@@ -82,8 +76,6 @@
     <script>
         const resultElement = document.getElementById('result');
         const errorElement = document.getElementById('error');
-
-document.getElementById(test).style.display = "none";
 
         Quagga.init({
             inputStream: {
@@ -116,7 +108,7 @@ document.getElementById(test).style.display = "none";
         Quagga.onDetected((data) => {
             resultElement.textContent = `Barcode: ${data.codeResult.code}`;
             if(data.codeResult.code == 12345670){
-                getElementById("test").style.display = null;
+                alert("got it");
             }
             errorElement.textContent = ""; // Clear error messages
         });
