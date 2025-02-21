@@ -1,1 +1,129 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuaggaJS UPC-E Scanner</title>
+    <script src="https://cdn.jsdelivr.net/npm/quagga@0.12.1/dist/quagga.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        #interactive {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #interactive video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        #result {
+            font-size: 2rem;
+            font-weight: bold;
+            color: green;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        #error {
+            font-size: 1rem;
+            color: red;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <img id="test" src="poke.jpg">
+    </div>
+
+
+    <div id="interactive"></div>
+    <div id="overlay">
+        <div>
+            <p id="result">Scanning...</p>
+            <p id="error"></p>
+        </div>
+    </div>
+
+    <script>
+        const resultElement = document.getElementById('result');
+        const errorElement = document.getElementById('error');
+
+document.getElementById(test).style.display = "none";
+
+        Quagga.init({
+            inputStream: {
+                type: "LiveStream",
+                target: document.querySelector('#interactive'), // Bind to #interactive div
+                constraints: {
+                    facingMode: "environment" // Use rear camera
+                }
+            },
+            decoder: {
+                readers: ["upc_e_reader"] // Use UPC-E reader
+            }
+        }, (err) => {
+            if (err) {
+                console.error(err);
+                errorElement.textContent = `Initialization error: ${err.message}`;
+                return;
+            }
+            Quagga.start();
+        });
+
+        Quagga.onProcessed((result) => {
+            if (result) {
+                if (!result.codeResult) {
+                    resultElement.textContent = "Scanning...";
+                }
+            }
+        });
+
+        Quagga.onDetected((data) => {
+            resultElement.textContent = `Barcode: ${data.codeResult.code}`;
+            if(data.codeResult.code == 12345670){
+                getElementById("test").style.display = null;
+            }
+            errorElement.textContent = ""; // Clear error messages
+        });
+
+        Quagga.onError((error) => {
+            errorElement.textContent = `Scanning error: ${error}`;
+        });
+    </script>
+</body>
+</html>
